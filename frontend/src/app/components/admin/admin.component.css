@@ -1,0 +1,19 @@
+table.mat-table,table{
+    width:100%;
+}
+
+tr.mat-header{
+    font-weight: bolder;
+}
+
+mat-divider{
+    padding-bottom: 20px;
+}
+
+h1{
+    text-align: center;
+}
+
+.mat-elevation-z8{
+    margin-bottom: 20px;
+}

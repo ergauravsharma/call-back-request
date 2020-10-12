@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow p-3 mb-5 bg-white rounded">
+    <a class="navbar-brand" href="#">
+        <img src="../../../assets/images/adobe-logo.png" width="50" height="50" class="d-inline-block align-center" alt="">
+        CallBack Scheduler
+      </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> 
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent -4">
+      <ul class="navbar-nav ml-auto">
+        <li>
+        <a class="nav-link" *ngIf="!this.authService.isLoggedIn" class="p-2 text-dark" routerLinkActive="active" routerLink="/log-in">Sign in</a></li> 
+      <li>
+        <li>
+          <a class="nav-link" *ngIf="this.authService.isLoggedIn" class="p-2 text-dark" routerLinkActive="active" routerLink="/admin/:id">Admin Home</a></li> 
+        <li>
+        <li>
+          <a class="nav-link" *ngIf="this.authService.isLoggedIn" class="p-2 text-dark" routerLinkActive="active" routerLink="/previous-callback">Previous Calls</a></li> 
+        <li>
+        <button class="nav-link" (click)="logout()" *ngIf="this.authService.isLoggedIn" type="button" class="btn btn-danger">Logout</button>
+    </li>
+      </ul>
+     
+    </div>
+  </nav>

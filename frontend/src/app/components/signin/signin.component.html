@@ -1,0 +1,22 @@
+<div class="container">
+    <h2 class="page-header" >Login</h2>
+    <form class="form-signin" [formGroup]="signinForm" (ngSubmit)="loginUser()">
+            <div class="form-group">
+              <label for="Email">Email</label>
+              <input type="email" class="form-control" formControlName="email" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+            <label for="Password">Password</label>
+            <input type="password" class="form-control" formControlName="password" placeholder="Password">
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me
+              </label>
+            </div>
+            <input class="btn btn-lg btn-primary" type="submit" value="Login">
+    </form><br>
+    Forgot Password? <a href="forgotPassword">Click here</a> to request new password.<br>
+    <br>
+    
+    </div>
