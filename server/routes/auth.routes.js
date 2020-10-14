@@ -238,5 +238,36 @@ router.put('/updateCallBackDetails',(req, res, next) => {
   });
   
 
+//Scheduling an email with callback details pending in next 6 hours;  
+router.get('/getCallBackData',(req,res) => {
+
+    let query = {"date":{$gt:new Date(Date.now() + 6*60 * 1000)}};
+    
+callBack.find({query},function(err,calls){
+callBack.aggregate([
+    {
+        $match:{done:"No"}
+    },
+{
+    "$group":{
+        "_id":1,
+        ticketID:{"$first":"$ticketID"},
+        ldap:{"$first":"$ldap"},
+        reason:{"$first":"$reason"},
+        date:{"$first":"$date"},
+        time:{"$first":"$time"},       
+    }
+}
+], function(err,callback){
+    if(err){
+        console.log(err);
+    }
+    else {
+        console.log(callback);
+        res.json({calls:callback})
+    }
+})
+});
+})
 
 module.exports = router;
